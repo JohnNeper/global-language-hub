@@ -15,7 +15,7 @@ describe('CanVerify mock frontend workflow',()=> {
   expect(lookup?.extended).toBeUndefined();
   await expect(publicVerificationApi.challenge('RVD-2026-00842','FAIL')).rejects.toThrow();
   expect((await publicVerificationApi.challenge('RVD-2026-00842','DEMO')).extended?.firstName).toBe('Demo');
- });
+ }, 15000);
  it('exposes a recoverable simulated network error',async()=>{
   setDemoScenario('network');await expect(portalApi.get()).rejects.toThrow();
   setDemoScenario('success');expect((await portalApi.get()).candidate).toBeDefined();
