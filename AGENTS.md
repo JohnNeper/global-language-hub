@@ -12,3 +12,6 @@
 - Use TanStack Start file routes for all public and portal pages; this preserves the platform's routing and SSR integration.
 - Keep translated UI in a shared locale provider and typed API services outside components; this allows switching language and replacing mock adapters without rewriting pages.
 - Mock data and sessions stay browser-memory-only; this avoids persisting sensitive demo information and keeps the application frontend-only.
+
+- Parent verification routes render Outlet with content in index leaves; this keeps case detail navigation functional.
+- Generate demo PDFs lazily in the browser and mark them unofficial; this avoids server dependencies and misleading document validity.
