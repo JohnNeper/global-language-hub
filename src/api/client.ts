@@ -3,8 +3,8 @@ import { createMockData } from '@/mocks/data';
 export type DemoScenario = 'success' | 'empty' | 'network' | 'server';
 let scenario: DemoScenario = 'success';
 let data = createMockData();
-const baseUrl = import.meta.env.VITE_API_BASE_URL as string | undefined;
-const mode = import.meta.env.VITE_API_MODE === 'rest' ? 'rest' : 'mock';
+const baseUrl = import.meta.env['VITE_API_BASE_URL'] as string | undefined;
+const mode = import.meta.env['VITE_API_MODE'] === 'rest' ? 'rest' : 'mock';
 export const apiConfig = { mode, baseUrl };
 export function setDemoScenario(next: DemoScenario) { scenario = next; }
 export class ClientError extends Error { constructor(public code: string, message: string) { super(message); } }
