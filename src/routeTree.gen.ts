@@ -10,33 +10,705 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as SecurityRouteImport } from './routes/security'
+import { Route as VerifyRouteImport } from './routes/verify'
+import { Route as AdminAuditRouteImport } from './routes/admin.audit'
+import { Route as AdminBanksRouteImport } from './routes/admin.banks'
+import { Route as AdminCandidatesRouteImport } from './routes/admin.candidates'
+import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
+import { Route as AdminFraudRouteImport } from './routes/admin.fraud'
+import { Route as AdminLoginRouteImport } from './routes/admin.login'
+import { Route as AdminNotificationsRouteImport } from './routes/admin.notifications'
+import { Route as AdminReportsRouteImport } from './routes/admin.reports'
+import { Route as AdminRvdRouteImport } from './routes/admin.rvd'
+import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
+import { Route as AdminUsersRouteImport } from './routes/admin.users'
+import { Route as AdminVerificationsRouteImport } from './routes/admin.verifications'
+import { Route as BankAnalyticsRouteImport } from './routes/bank.analytics'
+import { Route as BankCompletedRouteImport } from './routes/bank.completed'
+import { Route as BankDashboardRouteImport } from './routes/bank.dashboard'
+import { Route as BankExportsRouteImport } from './routes/bank.exports'
+import { Route as BankInstitutionRouteImport } from './routes/bank.institution'
+import { Route as BankLettersRouteImport } from './routes/bank.letters'
+import { Route as BankLoginRouteImport } from './routes/bank.login'
+import { Route as BankPendingRouteImport } from './routes/bank.pending'
+import { Route as BankRejectedRouteImport } from './routes/bank.rejected'
+import { Route as BankSettingsRouteImport } from './routes/bank.settings'
+import { Route as BankVerificationsRouteImport } from './routes/bank.verifications'
+import { Route as CandidateDashboardRouteImport } from './routes/candidate.dashboard'
+import { Route as CandidateDocumentsRouteImport } from './routes/candidate.documents'
+import { Route as CandidateLoginRouteImport } from './routes/candidate.login'
+import { Route as CandidateNotificationsRouteImport } from './routes/candidate.notifications'
+import { Route as CandidateOnboardingRouteImport } from './routes/candidate.onboarding'
+import { Route as CandidateProfileRouteImport } from './routes/candidate.profile'
+import { Route as CandidateRegisterRouteImport } from './routes/candidate.register'
+import { Route as CandidateSettingsRouteImport } from './routes/candidate.settings'
+import { Route as CandidateVerifyEmailRouteImport } from './routes/candidate.verify-email'
+import { Route as LegalDisclaimerRouteImport } from './routes/legal.disclaimer'
+import { Route as LegalPrivacyRouteImport } from './routes/legal.privacy'
+import { Route as LegalTermsRouteImport } from './routes/legal.terms'
+import { Route as AdminVerificationsIdRouteImport } from './routes/admin.verifications.$id'
+import { Route as BankVerificationsIdRouteImport } from './routes/bank.verifications.$id'
+import { Route as CandidateRvdIdRouteImport } from './routes/candidate.rvd.$id'
+import { Route as CandidateVerificationBankRouteImport } from './routes/candidate.verification.bank'
+import { Route as CandidateVerificationDocumentsRouteImport } from './routes/candidate.verification.documents'
+import { Route as CandidateVerificationMandateRouteImport } from './routes/candidate.verification.mandate'
+import { Route as CandidateVerificationNewRouteImport } from './routes/candidate.verification.new'
+import { Route as CandidateVerificationPaymentRouteImport } from './routes/candidate.verification.payment'
+import { Route as CandidateVerificationResultRouteImport } from './routes/candidate.verification.result'
+import { Route as CandidateVerificationStatusRouteImport } from './routes/candidate.verification.status'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecurityRoute = SecurityRouteImport.update({
+  id: '/security',
+  path: '/security',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerifyRoute = VerifyRouteImport.update({
+  id: '/verify',
+  path: '/verify',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminAuditRoute = AdminAuditRouteImport.update({
+  id: '/admin/audit',
+  path: '/admin/audit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminBanksRoute = AdminBanksRouteImport.update({
+  id: '/admin/banks',
+  path: '/admin/banks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminCandidatesRoute = AdminCandidatesRouteImport.update({
+  id: '/admin/candidates',
+  path: '/admin/candidates',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminDashboardRoute = AdminDashboardRouteImport.update({
+  id: '/admin/dashboard',
+  path: '/admin/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminFraudRoute = AdminFraudRouteImport.update({
+  id: '/admin/fraud',
+  path: '/admin/fraud',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: '/admin/login',
+  path: '/admin/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminNotificationsRoute = AdminNotificationsRouteImport.update({
+  id: '/admin/notifications',
+  path: '/admin/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminReportsRoute = AdminReportsRouteImport.update({
+  id: '/admin/reports',
+  path: '/admin/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRvdRoute = AdminRvdRouteImport.update({
+  id: '/admin/rvd',
+  path: '/admin/rvd',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSettingsRoute = AdminSettingsRouteImport.update({
+  id: '/admin/settings',
+  path: '/admin/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminUsersRoute = AdminUsersRouteImport.update({
+  id: '/admin/users',
+  path: '/admin/users',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminVerificationsRoute = AdminVerificationsRouteImport.update({
+  id: '/admin/verifications',
+  path: '/admin/verifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BankAnalyticsRoute = BankAnalyticsRouteImport.update({
+  id: '/bank/analytics',
+  path: '/bank/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BankCompletedRoute = BankCompletedRouteImport.update({
+  id: '/bank/completed',
+  path: '/bank/completed',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BankDashboardRoute = BankDashboardRouteImport.update({
+  id: '/bank/dashboard',
+  path: '/bank/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BankExportsRoute = BankExportsRouteImport.update({
+  id: '/bank/exports',
+  path: '/bank/exports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BankInstitutionRoute = BankInstitutionRouteImport.update({
+  id: '/bank/institution',
+  path: '/bank/institution',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BankLettersRoute = BankLettersRouteImport.update({
+  id: '/bank/letters',
+  path: '/bank/letters',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BankLoginRoute = BankLoginRouteImport.update({
+  id: '/bank/login',
+  path: '/bank/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BankPendingRoute = BankPendingRouteImport.update({
+  id: '/bank/pending',
+  path: '/bank/pending',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BankRejectedRoute = BankRejectedRouteImport.update({
+  id: '/bank/rejected',
+  path: '/bank/rejected',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BankSettingsRoute = BankSettingsRouteImport.update({
+  id: '/bank/settings',
+  path: '/bank/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BankVerificationsRoute = BankVerificationsRouteImport.update({
+  id: '/bank/verifications',
+  path: '/bank/verifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CandidateDashboardRoute = CandidateDashboardRouteImport.update({
+  id: '/candidate/dashboard',
+  path: '/candidate/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CandidateDocumentsRoute = CandidateDocumentsRouteImport.update({
+  id: '/candidate/documents',
+  path: '/candidate/documents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CandidateLoginRoute = CandidateLoginRouteImport.update({
+  id: '/candidate/login',
+  path: '/candidate/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CandidateNotificationsRoute = CandidateNotificationsRouteImport.update({
+  id: '/candidate/notifications',
+  path: '/candidate/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CandidateOnboardingRoute = CandidateOnboardingRouteImport.update({
+  id: '/candidate/onboarding',
+  path: '/candidate/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CandidateProfileRoute = CandidateProfileRouteImport.update({
+  id: '/candidate/profile',
+  path: '/candidate/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CandidateRegisterRoute = CandidateRegisterRouteImport.update({
+  id: '/candidate/register',
+  path: '/candidate/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CandidateSettingsRoute = CandidateSettingsRouteImport.update({
+  id: '/candidate/settings',
+  path: '/candidate/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CandidateVerifyEmailRoute = CandidateVerifyEmailRouteImport.update({
+  id: '/candidate/verify-email',
+  path: '/candidate/verify-email',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalDisclaimerRoute = LegalDisclaimerRouteImport.update({
+  id: '/legal/disclaimer',
+  path: '/legal/disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalPrivacyRoute = LegalPrivacyRouteImport.update({
+  id: '/legal/privacy',
+  path: '/legal/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalTermsRoute = LegalTermsRouteImport.update({
+  id: '/legal/terms',
+  path: '/legal/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminVerificationsIdRoute = AdminVerificationsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => AdminVerificationsRoute,
+} as any)
+const BankVerificationsIdRoute = BankVerificationsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => BankVerificationsRoute,
+} as any)
+const CandidateRvdIdRoute = CandidateRvdIdRouteImport.update({
+  id: '/candidate/rvd/$id',
+  path: '/candidate/rvd/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CandidateVerificationBankRoute =
+  CandidateVerificationBankRouteImport.update({
+    id: '/candidate/verification/bank',
+    path: '/candidate/verification/bank',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CandidateVerificationDocumentsRoute =
+  CandidateVerificationDocumentsRouteImport.update({
+    id: '/candidate/verification/documents',
+    path: '/candidate/verification/documents',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CandidateVerificationMandateRoute =
+  CandidateVerificationMandateRouteImport.update({
+    id: '/candidate/verification/mandate',
+    path: '/candidate/verification/mandate',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CandidateVerificationNewRoute =
+  CandidateVerificationNewRouteImport.update({
+    id: '/candidate/verification/new',
+    path: '/candidate/verification/new',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CandidateVerificationPaymentRoute =
+  CandidateVerificationPaymentRouteImport.update({
+    id: '/candidate/verification/payment',
+    path: '/candidate/verification/payment',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CandidateVerificationResultRoute =
+  CandidateVerificationResultRouteImport.update({
+    id: '/candidate/verification/result',
+    path: '/candidate/verification/result',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CandidateVerificationStatusRoute =
+  CandidateVerificationStatusRouteImport.update({
+    id: '/candidate/verification/status',
+    path: '/candidate/verification/status',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/security': typeof SecurityRoute
+  '/verify': typeof VerifyRoute
+  '/admin/audit': typeof AdminAuditRoute
+  '/admin/banks': typeof AdminBanksRoute
+  '/admin/candidates': typeof AdminCandidatesRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/fraud': typeof AdminFraudRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/notifications': typeof AdminNotificationsRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/rvd': typeof AdminRvdRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/admin/verifications': typeof AdminVerificationsRouteWithChildren
+  '/bank/analytics': typeof BankAnalyticsRoute
+  '/bank/completed': typeof BankCompletedRoute
+  '/bank/dashboard': typeof BankDashboardRoute
+  '/bank/exports': typeof BankExportsRoute
+  '/bank/institution': typeof BankInstitutionRoute
+  '/bank/letters': typeof BankLettersRoute
+  '/bank/login': typeof BankLoginRoute
+  '/bank/pending': typeof BankPendingRoute
+  '/bank/rejected': typeof BankRejectedRoute
+  '/bank/settings': typeof BankSettingsRoute
+  '/bank/verifications': typeof BankVerificationsRouteWithChildren
+  '/candidate/dashboard': typeof CandidateDashboardRoute
+  '/candidate/documents': typeof CandidateDocumentsRoute
+  '/candidate/login': typeof CandidateLoginRoute
+  '/candidate/notifications': typeof CandidateNotificationsRoute
+  '/candidate/onboarding': typeof CandidateOnboardingRoute
+  '/candidate/profile': typeof CandidateProfileRoute
+  '/candidate/register': typeof CandidateRegisterRoute
+  '/candidate/settings': typeof CandidateSettingsRoute
+  '/candidate/verify-email': typeof CandidateVerifyEmailRoute
+  '/legal/disclaimer': typeof LegalDisclaimerRoute
+  '/legal/privacy': typeof LegalPrivacyRoute
+  '/legal/terms': typeof LegalTermsRoute
+  '/admin/verifications/$id': typeof AdminVerificationsIdRoute
+  '/bank/verifications/$id': typeof BankVerificationsIdRoute
+  '/candidate/rvd/$id': typeof CandidateRvdIdRoute
+  '/candidate/verification/bank': typeof CandidateVerificationBankRoute
+  '/candidate/verification/documents': typeof CandidateVerificationDocumentsRoute
+  '/candidate/verification/mandate': typeof CandidateVerificationMandateRoute
+  '/candidate/verification/new': typeof CandidateVerificationNewRoute
+  '/candidate/verification/payment': typeof CandidateVerificationPaymentRoute
+  '/candidate/verification/result': typeof CandidateVerificationResultRoute
+  '/candidate/verification/status': typeof CandidateVerificationStatusRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/security': typeof SecurityRoute
+  '/verify': typeof VerifyRoute
+  '/admin/audit': typeof AdminAuditRoute
+  '/admin/banks': typeof AdminBanksRoute
+  '/admin/candidates': typeof AdminCandidatesRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/fraud': typeof AdminFraudRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/notifications': typeof AdminNotificationsRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/rvd': typeof AdminRvdRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/admin/verifications': typeof AdminVerificationsRouteWithChildren
+  '/bank/analytics': typeof BankAnalyticsRoute
+  '/bank/completed': typeof BankCompletedRoute
+  '/bank/dashboard': typeof BankDashboardRoute
+  '/bank/exports': typeof BankExportsRoute
+  '/bank/institution': typeof BankInstitutionRoute
+  '/bank/letters': typeof BankLettersRoute
+  '/bank/login': typeof BankLoginRoute
+  '/bank/pending': typeof BankPendingRoute
+  '/bank/rejected': typeof BankRejectedRoute
+  '/bank/settings': typeof BankSettingsRoute
+  '/bank/verifications': typeof BankVerificationsRouteWithChildren
+  '/candidate/dashboard': typeof CandidateDashboardRoute
+  '/candidate/documents': typeof CandidateDocumentsRoute
+  '/candidate/login': typeof CandidateLoginRoute
+  '/candidate/notifications': typeof CandidateNotificationsRoute
+  '/candidate/onboarding': typeof CandidateOnboardingRoute
+  '/candidate/profile': typeof CandidateProfileRoute
+  '/candidate/register': typeof CandidateRegisterRoute
+  '/candidate/settings': typeof CandidateSettingsRoute
+  '/candidate/verify-email': typeof CandidateVerifyEmailRoute
+  '/legal/disclaimer': typeof LegalDisclaimerRoute
+  '/legal/privacy': typeof LegalPrivacyRoute
+  '/legal/terms': typeof LegalTermsRoute
+  '/admin/verifications/$id': typeof AdminVerificationsIdRoute
+  '/bank/verifications/$id': typeof BankVerificationsIdRoute
+  '/candidate/rvd/$id': typeof CandidateRvdIdRoute
+  '/candidate/verification/bank': typeof CandidateVerificationBankRoute
+  '/candidate/verification/documents': typeof CandidateVerificationDocumentsRoute
+  '/candidate/verification/mandate': typeof CandidateVerificationMandateRoute
+  '/candidate/verification/new': typeof CandidateVerificationNewRoute
+  '/candidate/verification/payment': typeof CandidateVerificationPaymentRoute
+  '/candidate/verification/result': typeof CandidateVerificationResultRoute
+  '/candidate/verification/status': typeof CandidateVerificationStatusRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/security': typeof SecurityRoute
+  '/verify': typeof VerifyRoute
+  '/admin/audit': typeof AdminAuditRoute
+  '/admin/banks': typeof AdminBanksRoute
+  '/admin/candidates': typeof AdminCandidatesRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/fraud': typeof AdminFraudRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/notifications': typeof AdminNotificationsRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/rvd': typeof AdminRvdRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/admin/verifications': typeof AdminVerificationsRouteWithChildren
+  '/bank/analytics': typeof BankAnalyticsRoute
+  '/bank/completed': typeof BankCompletedRoute
+  '/bank/dashboard': typeof BankDashboardRoute
+  '/bank/exports': typeof BankExportsRoute
+  '/bank/institution': typeof BankInstitutionRoute
+  '/bank/letters': typeof BankLettersRoute
+  '/bank/login': typeof BankLoginRoute
+  '/bank/pending': typeof BankPendingRoute
+  '/bank/rejected': typeof BankRejectedRoute
+  '/bank/settings': typeof BankSettingsRoute
+  '/bank/verifications': typeof BankVerificationsRouteWithChildren
+  '/candidate/dashboard': typeof CandidateDashboardRoute
+  '/candidate/documents': typeof CandidateDocumentsRoute
+  '/candidate/login': typeof CandidateLoginRoute
+  '/candidate/notifications': typeof CandidateNotificationsRoute
+  '/candidate/onboarding': typeof CandidateOnboardingRoute
+  '/candidate/profile': typeof CandidateProfileRoute
+  '/candidate/register': typeof CandidateRegisterRoute
+  '/candidate/settings': typeof CandidateSettingsRoute
+  '/candidate/verify-email': typeof CandidateVerifyEmailRoute
+  '/legal/disclaimer': typeof LegalDisclaimerRoute
+  '/legal/privacy': typeof LegalPrivacyRoute
+  '/legal/terms': typeof LegalTermsRoute
+  '/admin/verifications/$id': typeof AdminVerificationsIdRoute
+  '/bank/verifications/$id': typeof BankVerificationsIdRoute
+  '/candidate/rvd/$id': typeof CandidateRvdIdRoute
+  '/candidate/verification/bank': typeof CandidateVerificationBankRoute
+  '/candidate/verification/documents': typeof CandidateVerificationDocumentsRoute
+  '/candidate/verification/mandate': typeof CandidateVerificationMandateRoute
+  '/candidate/verification/new': typeof CandidateVerificationNewRoute
+  '/candidate/verification/payment': typeof CandidateVerificationPaymentRoute
+  '/candidate/verification/result': typeof CandidateVerificationResultRoute
+  '/candidate/verification/status': typeof CandidateVerificationStatusRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/faq'
+    | '/how-it-works'
+    | '/security'
+    | '/verify'
+    | '/admin/audit'
+    | '/admin/banks'
+    | '/admin/candidates'
+    | '/admin/dashboard'
+    | '/admin/fraud'
+    | '/admin/login'
+    | '/admin/notifications'
+    | '/admin/reports'
+    | '/admin/rvd'
+    | '/admin/settings'
+    | '/admin/users'
+    | '/admin/verifications'
+    | '/bank/analytics'
+    | '/bank/completed'
+    | '/bank/dashboard'
+    | '/bank/exports'
+    | '/bank/institution'
+    | '/bank/letters'
+    | '/bank/login'
+    | '/bank/pending'
+    | '/bank/rejected'
+    | '/bank/settings'
+    | '/bank/verifications'
+    | '/candidate/dashboard'
+    | '/candidate/documents'
+    | '/candidate/login'
+    | '/candidate/notifications'
+    | '/candidate/onboarding'
+    | '/candidate/profile'
+    | '/candidate/register'
+    | '/candidate/settings'
+    | '/candidate/verify-email'
+    | '/legal/disclaimer'
+    | '/legal/privacy'
+    | '/legal/terms'
+    | '/admin/verifications/$id'
+    | '/bank/verifications/$id'
+    | '/candidate/rvd/$id'
+    | '/candidate/verification/bank'
+    | '/candidate/verification/documents'
+    | '/candidate/verification/mandate'
+    | '/candidate/verification/new'
+    | '/candidate/verification/payment'
+    | '/candidate/verification/result'
+    | '/candidate/verification/status'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/faq'
+    | '/how-it-works'
+    | '/security'
+    | '/verify'
+    | '/admin/audit'
+    | '/admin/banks'
+    | '/admin/candidates'
+    | '/admin/dashboard'
+    | '/admin/fraud'
+    | '/admin/login'
+    | '/admin/notifications'
+    | '/admin/reports'
+    | '/admin/rvd'
+    | '/admin/settings'
+    | '/admin/users'
+    | '/admin/verifications'
+    | '/bank/analytics'
+    | '/bank/completed'
+    | '/bank/dashboard'
+    | '/bank/exports'
+    | '/bank/institution'
+    | '/bank/letters'
+    | '/bank/login'
+    | '/bank/pending'
+    | '/bank/rejected'
+    | '/bank/settings'
+    | '/bank/verifications'
+    | '/candidate/dashboard'
+    | '/candidate/documents'
+    | '/candidate/login'
+    | '/candidate/notifications'
+    | '/candidate/onboarding'
+    | '/candidate/profile'
+    | '/candidate/register'
+    | '/candidate/settings'
+    | '/candidate/verify-email'
+    | '/legal/disclaimer'
+    | '/legal/privacy'
+    | '/legal/terms'
+    | '/admin/verifications/$id'
+    | '/bank/verifications/$id'
+    | '/candidate/rvd/$id'
+    | '/candidate/verification/bank'
+    | '/candidate/verification/documents'
+    | '/candidate/verification/mandate'
+    | '/candidate/verification/new'
+    | '/candidate/verification/payment'
+    | '/candidate/verification/result'
+    | '/candidate/verification/status'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/faq'
+    | '/how-it-works'
+    | '/security'
+    | '/verify'
+    | '/admin/audit'
+    | '/admin/banks'
+    | '/admin/candidates'
+    | '/admin/dashboard'
+    | '/admin/fraud'
+    | '/admin/login'
+    | '/admin/notifications'
+    | '/admin/reports'
+    | '/admin/rvd'
+    | '/admin/settings'
+    | '/admin/users'
+    | '/admin/verifications'
+    | '/bank/analytics'
+    | '/bank/completed'
+    | '/bank/dashboard'
+    | '/bank/exports'
+    | '/bank/institution'
+    | '/bank/letters'
+    | '/bank/login'
+    | '/bank/pending'
+    | '/bank/rejected'
+    | '/bank/settings'
+    | '/bank/verifications'
+    | '/candidate/dashboard'
+    | '/candidate/documents'
+    | '/candidate/login'
+    | '/candidate/notifications'
+    | '/candidate/onboarding'
+    | '/candidate/profile'
+    | '/candidate/register'
+    | '/candidate/settings'
+    | '/candidate/verify-email'
+    | '/legal/disclaimer'
+    | '/legal/privacy'
+    | '/legal/terms'
+    | '/admin/verifications/$id'
+    | '/bank/verifications/$id'
+    | '/candidate/rvd/$id'
+    | '/candidate/verification/bank'
+    | '/candidate/verification/documents'
+    | '/candidate/verification/mandate'
+    | '/candidate/verification/new'
+    | '/candidate/verification/payment'
+    | '/candidate/verification/result'
+    | '/candidate/verification/status'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
+  HowItWorksRoute: typeof HowItWorksRoute
+  SecurityRoute: typeof SecurityRoute
+  VerifyRoute: typeof VerifyRoute
+  AdminAuditRoute: typeof AdminAuditRoute
+  AdminBanksRoute: typeof AdminBanksRoute
+  AdminCandidatesRoute: typeof AdminCandidatesRoute
+  AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminFraudRoute: typeof AdminFraudRoute
+  AdminLoginRoute: typeof AdminLoginRoute
+  AdminNotificationsRoute: typeof AdminNotificationsRoute
+  AdminReportsRoute: typeof AdminReportsRoute
+  AdminRvdRoute: typeof AdminRvdRoute
+  AdminSettingsRoute: typeof AdminSettingsRoute
+  AdminUsersRoute: typeof AdminUsersRoute
+  AdminVerificationsRoute: typeof AdminVerificationsRouteWithChildren
+  BankAnalyticsRoute: typeof BankAnalyticsRoute
+  BankCompletedRoute: typeof BankCompletedRoute
+  BankDashboardRoute: typeof BankDashboardRoute
+  BankExportsRoute: typeof BankExportsRoute
+  BankInstitutionRoute: typeof BankInstitutionRoute
+  BankLettersRoute: typeof BankLettersRoute
+  BankLoginRoute: typeof BankLoginRoute
+  BankPendingRoute: typeof BankPendingRoute
+  BankRejectedRoute: typeof BankRejectedRoute
+  BankSettingsRoute: typeof BankSettingsRoute
+  BankVerificationsRoute: typeof BankVerificationsRouteWithChildren
+  CandidateDashboardRoute: typeof CandidateDashboardRoute
+  CandidateDocumentsRoute: typeof CandidateDocumentsRoute
+  CandidateLoginRoute: typeof CandidateLoginRoute
+  CandidateNotificationsRoute: typeof CandidateNotificationsRoute
+  CandidateOnboardingRoute: typeof CandidateOnboardingRoute
+  CandidateProfileRoute: typeof CandidateProfileRoute
+  CandidateRegisterRoute: typeof CandidateRegisterRoute
+  CandidateSettingsRoute: typeof CandidateSettingsRoute
+  CandidateVerifyEmailRoute: typeof CandidateVerifyEmailRoute
+  LegalDisclaimerRoute: typeof LegalDisclaimerRoute
+  LegalPrivacyRoute: typeof LegalPrivacyRoute
+  LegalTermsRoute: typeof LegalTermsRoute
+  CandidateRvdIdRoute: typeof CandidateRvdIdRoute
+  CandidateVerificationBankRoute: typeof CandidateVerificationBankRoute
+  CandidateVerificationDocumentsRoute: typeof CandidateVerificationDocumentsRoute
+  CandidateVerificationMandateRoute: typeof CandidateVerificationMandateRoute
+  CandidateVerificationNewRoute: typeof CandidateVerificationNewRoute
+  CandidateVerificationPaymentRoute: typeof CandidateVerificationPaymentRoute
+  CandidateVerificationResultRoute: typeof CandidateVerificationResultRoute
+  CandidateVerificationStatusRoute: typeof CandidateVerificationStatusRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +720,439 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/security': {
+      id: '/security'
+      path: '/security'
+      fullPath: '/security'
+      preLoaderRoute: typeof SecurityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verify': {
+      id: '/verify'
+      path: '/verify'
+      fullPath: '/verify'
+      preLoaderRoute: typeof VerifyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/audit': {
+      id: '/admin/audit'
+      path: '/admin/audit'
+      fullPath: '/admin/audit'
+      preLoaderRoute: typeof AdminAuditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/banks': {
+      id: '/admin/banks'
+      path: '/admin/banks'
+      fullPath: '/admin/banks'
+      preLoaderRoute: typeof AdminBanksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/candidates': {
+      id: '/admin/candidates'
+      path: '/admin/candidates'
+      fullPath: '/admin/candidates'
+      preLoaderRoute: typeof AdminCandidatesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/dashboard': {
+      id: '/admin/dashboard'
+      path: '/admin/dashboard'
+      fullPath: '/admin/dashboard'
+      preLoaderRoute: typeof AdminDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/fraud': {
+      id: '/admin/fraud'
+      path: '/admin/fraud'
+      fullPath: '/admin/fraud'
+      preLoaderRoute: typeof AdminFraudRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/login': {
+      id: '/admin/login'
+      path: '/admin/login'
+      fullPath: '/admin/login'
+      preLoaderRoute: typeof AdminLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/notifications': {
+      id: '/admin/notifications'
+      path: '/admin/notifications'
+      fullPath: '/admin/notifications'
+      preLoaderRoute: typeof AdminNotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/reports': {
+      id: '/admin/reports'
+      path: '/admin/reports'
+      fullPath: '/admin/reports'
+      preLoaderRoute: typeof AdminReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/rvd': {
+      id: '/admin/rvd'
+      path: '/admin/rvd'
+      fullPath: '/admin/rvd'
+      preLoaderRoute: typeof AdminRvdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/settings': {
+      id: '/admin/settings'
+      path: '/admin/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/users': {
+      id: '/admin/users'
+      path: '/admin/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AdminUsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/verifications': {
+      id: '/admin/verifications'
+      path: '/admin/verifications'
+      fullPath: '/admin/verifications'
+      preLoaderRoute: typeof AdminVerificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bank/analytics': {
+      id: '/bank/analytics'
+      path: '/bank/analytics'
+      fullPath: '/bank/analytics'
+      preLoaderRoute: typeof BankAnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bank/completed': {
+      id: '/bank/completed'
+      path: '/bank/completed'
+      fullPath: '/bank/completed'
+      preLoaderRoute: typeof BankCompletedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bank/dashboard': {
+      id: '/bank/dashboard'
+      path: '/bank/dashboard'
+      fullPath: '/bank/dashboard'
+      preLoaderRoute: typeof BankDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bank/exports': {
+      id: '/bank/exports'
+      path: '/bank/exports'
+      fullPath: '/bank/exports'
+      preLoaderRoute: typeof BankExportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bank/institution': {
+      id: '/bank/institution'
+      path: '/bank/institution'
+      fullPath: '/bank/institution'
+      preLoaderRoute: typeof BankInstitutionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bank/letters': {
+      id: '/bank/letters'
+      path: '/bank/letters'
+      fullPath: '/bank/letters'
+      preLoaderRoute: typeof BankLettersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bank/login': {
+      id: '/bank/login'
+      path: '/bank/login'
+      fullPath: '/bank/login'
+      preLoaderRoute: typeof BankLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bank/pending': {
+      id: '/bank/pending'
+      path: '/bank/pending'
+      fullPath: '/bank/pending'
+      preLoaderRoute: typeof BankPendingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bank/rejected': {
+      id: '/bank/rejected'
+      path: '/bank/rejected'
+      fullPath: '/bank/rejected'
+      preLoaderRoute: typeof BankRejectedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bank/settings': {
+      id: '/bank/settings'
+      path: '/bank/settings'
+      fullPath: '/bank/settings'
+      preLoaderRoute: typeof BankSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bank/verifications': {
+      id: '/bank/verifications'
+      path: '/bank/verifications'
+      fullPath: '/bank/verifications'
+      preLoaderRoute: typeof BankVerificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candidate/dashboard': {
+      id: '/candidate/dashboard'
+      path: '/candidate/dashboard'
+      fullPath: '/candidate/dashboard'
+      preLoaderRoute: typeof CandidateDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candidate/documents': {
+      id: '/candidate/documents'
+      path: '/candidate/documents'
+      fullPath: '/candidate/documents'
+      preLoaderRoute: typeof CandidateDocumentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candidate/login': {
+      id: '/candidate/login'
+      path: '/candidate/login'
+      fullPath: '/candidate/login'
+      preLoaderRoute: typeof CandidateLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candidate/notifications': {
+      id: '/candidate/notifications'
+      path: '/candidate/notifications'
+      fullPath: '/candidate/notifications'
+      preLoaderRoute: typeof CandidateNotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candidate/onboarding': {
+      id: '/candidate/onboarding'
+      path: '/candidate/onboarding'
+      fullPath: '/candidate/onboarding'
+      preLoaderRoute: typeof CandidateOnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candidate/profile': {
+      id: '/candidate/profile'
+      path: '/candidate/profile'
+      fullPath: '/candidate/profile'
+      preLoaderRoute: typeof CandidateProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candidate/register': {
+      id: '/candidate/register'
+      path: '/candidate/register'
+      fullPath: '/candidate/register'
+      preLoaderRoute: typeof CandidateRegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candidate/settings': {
+      id: '/candidate/settings'
+      path: '/candidate/settings'
+      fullPath: '/candidate/settings'
+      preLoaderRoute: typeof CandidateSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candidate/verify-email': {
+      id: '/candidate/verify-email'
+      path: '/candidate/verify-email'
+      fullPath: '/candidate/verify-email'
+      preLoaderRoute: typeof CandidateVerifyEmailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal/disclaimer': {
+      id: '/legal/disclaimer'
+      path: '/legal/disclaimer'
+      fullPath: '/legal/disclaimer'
+      preLoaderRoute: typeof LegalDisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal/privacy': {
+      id: '/legal/privacy'
+      path: '/legal/privacy'
+      fullPath: '/legal/privacy'
+      preLoaderRoute: typeof LegalPrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal/terms': {
+      id: '/legal/terms'
+      path: '/legal/terms'
+      fullPath: '/legal/terms'
+      preLoaderRoute: typeof LegalTermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/verifications/$id': {
+      id: '/admin/verifications/$id'
+      path: '/$id'
+      fullPath: '/admin/verifications/$id'
+      preLoaderRoute: typeof AdminVerificationsIdRouteImport
+      parentRoute: typeof AdminVerificationsRoute
+    }
+    '/bank/verifications/$id': {
+      id: '/bank/verifications/$id'
+      path: '/$id'
+      fullPath: '/bank/verifications/$id'
+      preLoaderRoute: typeof BankVerificationsIdRouteImport
+      parentRoute: typeof BankVerificationsRoute
+    }
+    '/candidate/rvd/$id': {
+      id: '/candidate/rvd/$id'
+      path: '/candidate/rvd/$id'
+      fullPath: '/candidate/rvd/$id'
+      preLoaderRoute: typeof CandidateRvdIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candidate/verification/bank': {
+      id: '/candidate/verification/bank'
+      path: '/candidate/verification/bank'
+      fullPath: '/candidate/verification/bank'
+      preLoaderRoute: typeof CandidateVerificationBankRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candidate/verification/documents': {
+      id: '/candidate/verification/documents'
+      path: '/candidate/verification/documents'
+      fullPath: '/candidate/verification/documents'
+      preLoaderRoute: typeof CandidateVerificationDocumentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candidate/verification/mandate': {
+      id: '/candidate/verification/mandate'
+      path: '/candidate/verification/mandate'
+      fullPath: '/candidate/verification/mandate'
+      preLoaderRoute: typeof CandidateVerificationMandateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candidate/verification/new': {
+      id: '/candidate/verification/new'
+      path: '/candidate/verification/new'
+      fullPath: '/candidate/verification/new'
+      preLoaderRoute: typeof CandidateVerificationNewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candidate/verification/payment': {
+      id: '/candidate/verification/payment'
+      path: '/candidate/verification/payment'
+      fullPath: '/candidate/verification/payment'
+      preLoaderRoute: typeof CandidateVerificationPaymentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candidate/verification/result': {
+      id: '/candidate/verification/result'
+      path: '/candidate/verification/result'
+      fullPath: '/candidate/verification/result'
+      preLoaderRoute: typeof CandidateVerificationResultRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candidate/verification/status': {
+      id: '/candidate/verification/status'
+      path: '/candidate/verification/status'
+      fullPath: '/candidate/verification/status'
+      preLoaderRoute: typeof CandidateVerificationStatusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
+interface AdminVerificationsRouteChildren {
+  AdminVerificationsIdRoute: typeof AdminVerificationsIdRoute
+}
+
+const AdminVerificationsRouteChildren: AdminVerificationsRouteChildren = {
+  AdminVerificationsIdRoute: AdminVerificationsIdRoute,
+}
+
+const AdminVerificationsRouteWithChildren =
+  AdminVerificationsRoute._addFileChildren(AdminVerificationsRouteChildren)
+
+interface BankVerificationsRouteChildren {
+  BankVerificationsIdRoute: typeof BankVerificationsIdRoute
+}
+
+const BankVerificationsRouteChildren: BankVerificationsRouteChildren = {
+  BankVerificationsIdRoute: BankVerificationsIdRoute,
+}
+
+const BankVerificationsRouteWithChildren =
+  BankVerificationsRoute._addFileChildren(BankVerificationsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
+  HowItWorksRoute: HowItWorksRoute,
+  SecurityRoute: SecurityRoute,
+  VerifyRoute: VerifyRoute,
+  AdminAuditRoute: AdminAuditRoute,
+  AdminBanksRoute: AdminBanksRoute,
+  AdminCandidatesRoute: AdminCandidatesRoute,
+  AdminDashboardRoute: AdminDashboardRoute,
+  AdminFraudRoute: AdminFraudRoute,
+  AdminLoginRoute: AdminLoginRoute,
+  AdminNotificationsRoute: AdminNotificationsRoute,
+  AdminReportsRoute: AdminReportsRoute,
+  AdminRvdRoute: AdminRvdRoute,
+  AdminSettingsRoute: AdminSettingsRoute,
+  AdminUsersRoute: AdminUsersRoute,
+  AdminVerificationsRoute: AdminVerificationsRouteWithChildren,
+  BankAnalyticsRoute: BankAnalyticsRoute,
+  BankCompletedRoute: BankCompletedRoute,
+  BankDashboardRoute: BankDashboardRoute,
+  BankExportsRoute: BankExportsRoute,
+  BankInstitutionRoute: BankInstitutionRoute,
+  BankLettersRoute: BankLettersRoute,
+  BankLoginRoute: BankLoginRoute,
+  BankPendingRoute: BankPendingRoute,
+  BankRejectedRoute: BankRejectedRoute,
+  BankSettingsRoute: BankSettingsRoute,
+  BankVerificationsRoute: BankVerificationsRouteWithChildren,
+  CandidateDashboardRoute: CandidateDashboardRoute,
+  CandidateDocumentsRoute: CandidateDocumentsRoute,
+  CandidateLoginRoute: CandidateLoginRoute,
+  CandidateNotificationsRoute: CandidateNotificationsRoute,
+  CandidateOnboardingRoute: CandidateOnboardingRoute,
+  CandidateProfileRoute: CandidateProfileRoute,
+  CandidateRegisterRoute: CandidateRegisterRoute,
+  CandidateSettingsRoute: CandidateSettingsRoute,
+  CandidateVerifyEmailRoute: CandidateVerifyEmailRoute,
+  LegalDisclaimerRoute: LegalDisclaimerRoute,
+  LegalPrivacyRoute: LegalPrivacyRoute,
+  LegalTermsRoute: LegalTermsRoute,
+  CandidateRvdIdRoute: CandidateRvdIdRoute,
+  CandidateVerificationBankRoute: CandidateVerificationBankRoute,
+  CandidateVerificationDocumentsRoute: CandidateVerificationDocumentsRoute,
+  CandidateVerificationMandateRoute: CandidateVerificationMandateRoute,
+  CandidateVerificationNewRoute: CandidateVerificationNewRoute,
+  CandidateVerificationPaymentRoute: CandidateVerificationPaymentRoute,
+  CandidateVerificationResultRoute: CandidateVerificationResultRoute,
+  CandidateVerificationStatusRoute: CandidateVerificationStatusRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
