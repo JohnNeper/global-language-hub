@@ -51,7 +51,9 @@ import { Route as CandidateVerifyEmailRouteImport } from './routes/candidate.ver
 import { Route as LegalDisclaimerRouteImport } from './routes/legal.disclaimer'
 import { Route as LegalPrivacyRouteImport } from './routes/legal.privacy'
 import { Route as LegalTermsRouteImport } from './routes/legal.terms'
+import { Route as AdminVerificationsIndexRouteImport } from './routes/admin.verifications.index'
 import { Route as AdminVerificationsIdRouteImport } from './routes/admin.verifications.$id'
+import { Route as BankVerificationsIndexRouteImport } from './routes/bank.verifications.index'
 import { Route as BankVerificationsIdRouteImport } from './routes/bank.verifications.$id'
 import { Route as CandidateRvdIdRouteImport } from './routes/candidate.rvd.$id'
 import { Route as CandidateVerificationBankRouteImport } from './routes/candidate.verification.bank'
@@ -272,10 +274,20 @@ const LegalTermsRoute = LegalTermsRouteImport.update({
   path: '/legal/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminVerificationsIndexRoute = AdminVerificationsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminVerificationsRoute,
+} as any)
 const AdminVerificationsIdRoute = AdminVerificationsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
   getParentRoute: () => AdminVerificationsRoute,
+} as any)
+const BankVerificationsIndexRoute = BankVerificationsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BankVerificationsRoute,
 } as any)
 const BankVerificationsIdRoute = BankVerificationsIdRouteImport.update({
   id: '/$id',
@@ -383,6 +395,8 @@ export interface FileRoutesByFullPath {
   '/candidate/verification/payment': typeof CandidateVerificationPaymentRoute
   '/candidate/verification/result': typeof CandidateVerificationResultRoute
   '/candidate/verification/status': typeof CandidateVerificationStatusRoute
+  '/admin/verifications/': typeof AdminVerificationsIndexRoute
+  '/bank/verifications/': typeof BankVerificationsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -403,7 +417,6 @@ export interface FileRoutesByTo {
   '/admin/rvd': typeof AdminRvdRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/users': typeof AdminUsersRoute
-  '/admin/verifications': typeof AdminVerificationsRouteWithChildren
   '/bank/analytics': typeof BankAnalyticsRoute
   '/bank/completed': typeof BankCompletedRoute
   '/bank/dashboard': typeof BankDashboardRoute
@@ -414,7 +427,6 @@ export interface FileRoutesByTo {
   '/bank/pending': typeof BankPendingRoute
   '/bank/rejected': typeof BankRejectedRoute
   '/bank/settings': typeof BankSettingsRoute
-  '/bank/verifications': typeof BankVerificationsRouteWithChildren
   '/candidate/dashboard': typeof CandidateDashboardRoute
   '/candidate/documents': typeof CandidateDocumentsRoute
   '/candidate/login': typeof CandidateLoginRoute
@@ -437,6 +449,8 @@ export interface FileRoutesByTo {
   '/candidate/verification/payment': typeof CandidateVerificationPaymentRoute
   '/candidate/verification/result': typeof CandidateVerificationResultRoute
   '/candidate/verification/status': typeof CandidateVerificationStatusRoute
+  '/admin/verifications': typeof AdminVerificationsIndexRoute
+  '/bank/verifications': typeof BankVerificationsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -492,6 +506,8 @@ export interface FileRoutesById {
   '/candidate/verification/payment': typeof CandidateVerificationPaymentRoute
   '/candidate/verification/result': typeof CandidateVerificationResultRoute
   '/candidate/verification/status': typeof CandidateVerificationStatusRoute
+  '/admin/verifications/': typeof AdminVerificationsIndexRoute
+  '/bank/verifications/': typeof BankVerificationsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -548,6 +564,8 @@ export interface FileRouteTypes {
     | '/candidate/verification/payment'
     | '/candidate/verification/result'
     | '/candidate/verification/status'
+    | '/admin/verifications/'
+    | '/bank/verifications/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -568,7 +586,6 @@ export interface FileRouteTypes {
     | '/admin/rvd'
     | '/admin/settings'
     | '/admin/users'
-    | '/admin/verifications'
     | '/bank/analytics'
     | '/bank/completed'
     | '/bank/dashboard'
@@ -579,7 +596,6 @@ export interface FileRouteTypes {
     | '/bank/pending'
     | '/bank/rejected'
     | '/bank/settings'
-    | '/bank/verifications'
     | '/candidate/dashboard'
     | '/candidate/documents'
     | '/candidate/login'
@@ -602,6 +618,8 @@ export interface FileRouteTypes {
     | '/candidate/verification/payment'
     | '/candidate/verification/result'
     | '/candidate/verification/status'
+    | '/admin/verifications'
+    | '/bank/verifications'
   id:
     | '__root__'
     | '/'
@@ -656,6 +674,8 @@ export interface FileRouteTypes {
     | '/candidate/verification/payment'
     | '/candidate/verification/result'
     | '/candidate/verification/status'
+    | '/admin/verifications/'
+    | '/bank/verifications/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -1007,12 +1027,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LegalTermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/verifications/': {
+      id: '/admin/verifications/'
+      path: '/'
+      fullPath: '/admin/verifications/'
+      preLoaderRoute: typeof AdminVerificationsIndexRouteImport
+      parentRoute: typeof AdminVerificationsRoute
+    }
     '/admin/verifications/$id': {
       id: '/admin/verifications/$id'
       path: '/$id'
       fullPath: '/admin/verifications/$id'
       preLoaderRoute: typeof AdminVerificationsIdRouteImport
       parentRoute: typeof AdminVerificationsRoute
+    }
+    '/bank/verifications/': {
+      id: '/bank/verifications/'
+      path: '/'
+      fullPath: '/bank/verifications/'
+      preLoaderRoute: typeof BankVerificationsIndexRouteImport
+      parentRoute: typeof BankVerificationsRoute
     }
     '/bank/verifications/$id': {
       id: '/bank/verifications/$id'
@@ -1082,10 +1116,12 @@ declare module '@tanstack/react-router' {
 
 interface AdminVerificationsRouteChildren {
   AdminVerificationsIdRoute: typeof AdminVerificationsIdRoute
+  AdminVerificationsIndexRoute: typeof AdminVerificationsIndexRoute
 }
 
 const AdminVerificationsRouteChildren: AdminVerificationsRouteChildren = {
   AdminVerificationsIdRoute: AdminVerificationsIdRoute,
+  AdminVerificationsIndexRoute: AdminVerificationsIndexRoute,
 }
 
 const AdminVerificationsRouteWithChildren =
@@ -1093,10 +1129,12 @@ const AdminVerificationsRouteWithChildren =
 
 interface BankVerificationsRouteChildren {
   BankVerificationsIdRoute: typeof BankVerificationsIdRoute
+  BankVerificationsIndexRoute: typeof BankVerificationsIndexRoute
 }
 
 const BankVerificationsRouteChildren: BankVerificationsRouteChildren = {
   BankVerificationsIdRoute: BankVerificationsIdRoute,
+  BankVerificationsIndexRoute: BankVerificationsIndexRoute,
 }
 
 const BankVerificationsRouteWithChildren =
