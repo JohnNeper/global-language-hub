@@ -14,21 +14,25 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as VerifyRouteImport } from './routes/verify'
 import { Route as AdminAuditRouteImport } from './routes/admin.audit'
 import { Route as AdminBanksRouteImport } from './routes/admin.banks'
+import { Route as AdminBillingRouteImport } from './routes/admin.billing'
 import { Route as AdminCandidatesRouteImport } from './routes/admin.candidates'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 import { Route as AdminFraudRouteImport } from './routes/admin.fraud'
 import { Route as AdminLoginRouteImport } from './routes/admin.login'
 import { Route as AdminNotificationsRouteImport } from './routes/admin.notifications'
+import { Route as AdminPartnersRouteImport } from './routes/admin.partners'
 import { Route as AdminReportsRouteImport } from './routes/admin.reports'
 import { Route as AdminRvdRouteImport } from './routes/admin.rvd'
 import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
 import { Route as AdminUsersRouteImport } from './routes/admin.users'
 import { Route as AdminVerificationsRouteImport } from './routes/admin.verifications'
 import { Route as BankAnalyticsRouteImport } from './routes/bank.analytics'
+import { Route as BankBillingRouteImport } from './routes/bank.billing'
 import { Route as BankCompletedRouteImport } from './routes/bank.completed'
 import { Route as BankDashboardRouteImport } from './routes/bank.dashboard'
 import { Route as BankExportsRouteImport } from './routes/bank.exports'
@@ -89,6 +93,11 @@ const HowItWorksRoute = HowItWorksRouteImport.update({
   path: '/how-it-works',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SecurityRoute = SecurityRouteImport.update({
   id: '/security',
   path: '/security',
@@ -107,6 +116,11 @@ const AdminAuditRoute = AdminAuditRouteImport.update({
 const AdminBanksRoute = AdminBanksRouteImport.update({
   id: '/admin/banks',
   path: '/admin/banks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminBillingRoute = AdminBillingRouteImport.update({
+  id: '/admin/billing',
+  path: '/admin/billing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminCandidatesRoute = AdminCandidatesRouteImport.update({
@@ -132,6 +146,11 @@ const AdminLoginRoute = AdminLoginRouteImport.update({
 const AdminNotificationsRoute = AdminNotificationsRouteImport.update({
   id: '/admin/notifications',
   path: '/admin/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminPartnersRoute = AdminPartnersRouteImport.update({
+  id: '/admin/partners',
+  path: '/admin/partners',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminReportsRoute = AdminReportsRouteImport.update({
@@ -162,6 +181,11 @@ const AdminVerificationsRoute = AdminVerificationsRouteImport.update({
 const BankAnalyticsRoute = BankAnalyticsRouteImport.update({
   id: '/bank/analytics',
   path: '/bank/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BankBillingRoute = BankBillingRouteImport.update({
+  id: '/bank/billing',
+  path: '/bank/billing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BankCompletedRoute = BankCompletedRouteImport.update({
@@ -348,21 +372,25 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/pricing': typeof PricingRoute
   '/security': typeof SecurityRoute
   '/verify': typeof VerifyRoute
   '/admin/audit': typeof AdminAuditRoute
   '/admin/banks': typeof AdminBanksRoute
+  '/admin/billing': typeof AdminBillingRoute
   '/admin/candidates': typeof AdminCandidatesRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/fraud': typeof AdminFraudRoute
   '/admin/login': typeof AdminLoginRoute
   '/admin/notifications': typeof AdminNotificationsRoute
+  '/admin/partners': typeof AdminPartnersRoute
   '/admin/reports': typeof AdminReportsRoute
   '/admin/rvd': typeof AdminRvdRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/users': typeof AdminUsersRoute
   '/admin/verifications': typeof AdminVerificationsRouteWithChildren
   '/bank/analytics': typeof BankAnalyticsRoute
+  '/bank/billing': typeof BankBillingRoute
   '/bank/completed': typeof BankCompletedRoute
   '/bank/dashboard': typeof BankDashboardRoute
   '/bank/exports': typeof BankExportsRoute
@@ -404,20 +432,24 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/pricing': typeof PricingRoute
   '/security': typeof SecurityRoute
   '/verify': typeof VerifyRoute
   '/admin/audit': typeof AdminAuditRoute
   '/admin/banks': typeof AdminBanksRoute
+  '/admin/billing': typeof AdminBillingRoute
   '/admin/candidates': typeof AdminCandidatesRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/fraud': typeof AdminFraudRoute
   '/admin/login': typeof AdminLoginRoute
   '/admin/notifications': typeof AdminNotificationsRoute
+  '/admin/partners': typeof AdminPartnersRoute
   '/admin/reports': typeof AdminReportsRoute
   '/admin/rvd': typeof AdminRvdRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/users': typeof AdminUsersRoute
   '/bank/analytics': typeof BankAnalyticsRoute
+  '/bank/billing': typeof BankBillingRoute
   '/bank/completed': typeof BankCompletedRoute
   '/bank/dashboard': typeof BankDashboardRoute
   '/bank/exports': typeof BankExportsRoute
@@ -459,21 +491,25 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/pricing': typeof PricingRoute
   '/security': typeof SecurityRoute
   '/verify': typeof VerifyRoute
   '/admin/audit': typeof AdminAuditRoute
   '/admin/banks': typeof AdminBanksRoute
+  '/admin/billing': typeof AdminBillingRoute
   '/admin/candidates': typeof AdminCandidatesRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/fraud': typeof AdminFraudRoute
   '/admin/login': typeof AdminLoginRoute
   '/admin/notifications': typeof AdminNotificationsRoute
+  '/admin/partners': typeof AdminPartnersRoute
   '/admin/reports': typeof AdminReportsRoute
   '/admin/rvd': typeof AdminRvdRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/users': typeof AdminUsersRoute
   '/admin/verifications': typeof AdminVerificationsRouteWithChildren
   '/bank/analytics': typeof BankAnalyticsRoute
+  '/bank/billing': typeof BankBillingRoute
   '/bank/completed': typeof BankCompletedRoute
   '/bank/dashboard': typeof BankDashboardRoute
   '/bank/exports': typeof BankExportsRoute
@@ -517,21 +553,25 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/how-it-works'
+    | '/pricing'
     | '/security'
     | '/verify'
     | '/admin/audit'
     | '/admin/banks'
+    | '/admin/billing'
     | '/admin/candidates'
     | '/admin/dashboard'
     | '/admin/fraud'
     | '/admin/login'
     | '/admin/notifications'
+    | '/admin/partners'
     | '/admin/reports'
     | '/admin/rvd'
     | '/admin/settings'
     | '/admin/users'
     | '/admin/verifications'
     | '/bank/analytics'
+    | '/bank/billing'
     | '/bank/completed'
     | '/bank/dashboard'
     | '/bank/exports'
@@ -573,20 +613,24 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/how-it-works'
+    | '/pricing'
     | '/security'
     | '/verify'
     | '/admin/audit'
     | '/admin/banks'
+    | '/admin/billing'
     | '/admin/candidates'
     | '/admin/dashboard'
     | '/admin/fraud'
     | '/admin/login'
     | '/admin/notifications'
+    | '/admin/partners'
     | '/admin/reports'
     | '/admin/rvd'
     | '/admin/settings'
     | '/admin/users'
     | '/bank/analytics'
+    | '/bank/billing'
     | '/bank/completed'
     | '/bank/dashboard'
     | '/bank/exports'
@@ -627,21 +671,25 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/how-it-works'
+    | '/pricing'
     | '/security'
     | '/verify'
     | '/admin/audit'
     | '/admin/banks'
+    | '/admin/billing'
     | '/admin/candidates'
     | '/admin/dashboard'
     | '/admin/fraud'
     | '/admin/login'
     | '/admin/notifications'
+    | '/admin/partners'
     | '/admin/reports'
     | '/admin/rvd'
     | '/admin/settings'
     | '/admin/users'
     | '/admin/verifications'
     | '/bank/analytics'
+    | '/bank/billing'
     | '/bank/completed'
     | '/bank/dashboard'
     | '/bank/exports'
@@ -684,21 +732,25 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
   HowItWorksRoute: typeof HowItWorksRoute
+  PricingRoute: typeof PricingRoute
   SecurityRoute: typeof SecurityRoute
   VerifyRoute: typeof VerifyRoute
   AdminAuditRoute: typeof AdminAuditRoute
   AdminBanksRoute: typeof AdminBanksRoute
+  AdminBillingRoute: typeof AdminBillingRoute
   AdminCandidatesRoute: typeof AdminCandidatesRoute
   AdminDashboardRoute: typeof AdminDashboardRoute
   AdminFraudRoute: typeof AdminFraudRoute
   AdminLoginRoute: typeof AdminLoginRoute
   AdminNotificationsRoute: typeof AdminNotificationsRoute
+  AdminPartnersRoute: typeof AdminPartnersRoute
   AdminReportsRoute: typeof AdminReportsRoute
   AdminRvdRoute: typeof AdminRvdRoute
   AdminSettingsRoute: typeof AdminSettingsRoute
   AdminUsersRoute: typeof AdminUsersRoute
   AdminVerificationsRoute: typeof AdminVerificationsRouteWithChildren
   BankAnalyticsRoute: typeof BankAnalyticsRoute
+  BankBillingRoute: typeof BankBillingRoute
   BankCompletedRoute: typeof BankCompletedRoute
   BankDashboardRoute: typeof BankDashboardRoute
   BankExportsRoute: typeof BankExportsRoute
@@ -768,6 +820,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HowItWorksRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/security': {
       id: '/security'
       path: '/security'
@@ -794,6 +853,13 @@ declare module '@tanstack/react-router' {
       path: '/admin/banks'
       fullPath: '/admin/banks'
       preLoaderRoute: typeof AdminBanksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/billing': {
+      id: '/admin/billing'
+      path: '/admin/billing'
+      fullPath: '/admin/billing'
+      preLoaderRoute: typeof AdminBillingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/candidates': {
@@ -829,6 +895,13 @@ declare module '@tanstack/react-router' {
       path: '/admin/notifications'
       fullPath: '/admin/notifications'
       preLoaderRoute: typeof AdminNotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/partners': {
+      id: '/admin/partners'
+      path: '/admin/partners'
+      fullPath: '/admin/partners'
+      preLoaderRoute: typeof AdminPartnersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/reports': {
@@ -871,6 +944,13 @@ declare module '@tanstack/react-router' {
       path: '/bank/analytics'
       fullPath: '/bank/analytics'
       preLoaderRoute: typeof BankAnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bank/billing': {
+      id: '/bank/billing'
+      path: '/bank/billing'
+      fullPath: '/bank/billing'
+      preLoaderRoute: typeof BankBillingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/bank/completed': {
@@ -1146,21 +1226,25 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
   HowItWorksRoute: HowItWorksRoute,
+  PricingRoute: PricingRoute,
   SecurityRoute: SecurityRoute,
   VerifyRoute: VerifyRoute,
   AdminAuditRoute: AdminAuditRoute,
   AdminBanksRoute: AdminBanksRoute,
+  AdminBillingRoute: AdminBillingRoute,
   AdminCandidatesRoute: AdminCandidatesRoute,
   AdminDashboardRoute: AdminDashboardRoute,
   AdminFraudRoute: AdminFraudRoute,
   AdminLoginRoute: AdminLoginRoute,
   AdminNotificationsRoute: AdminNotificationsRoute,
+  AdminPartnersRoute: AdminPartnersRoute,
   AdminReportsRoute: AdminReportsRoute,
   AdminRvdRoute: AdminRvdRoute,
   AdminSettingsRoute: AdminSettingsRoute,
   AdminUsersRoute: AdminUsersRoute,
   AdminVerificationsRoute: AdminVerificationsRouteWithChildren,
   BankAnalyticsRoute: BankAnalyticsRoute,
+  BankBillingRoute: BankBillingRoute,
   BankCompletedRoute: BankCompletedRoute,
   BankDashboardRoute: BankDashboardRoute,
   BankExportsRoute: BankExportsRoute,

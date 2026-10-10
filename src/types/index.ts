@@ -12,7 +12,10 @@ export interface Candidate { id: string; reference: string; firstName: string; l
 export interface Session { role: UserRole; name: string; email: string; }
 export interface OCRResult { passportNumber: string; name: string; dateOfBirth: string; nationality: string; confidence: number; simulated: true; }
 export interface VerificationDocument { id: string; name: string; size: number; type: string; status: DocumentStatus; date: string; ocr?: OCRResult; }
-export interface BankInstitution { id: string; name: string; initials: string; country: string; currencies: string[]; accountTypes: string[]; status: 'ACTIVE' | 'INACTIVE'; }
+export interface BankInstitution { id: string; name: string; initials: string; country: string; currencies: string[]; accountTypes: string[]; status: 'ACTIVE' | 'INACTIVE' | 'PENDING'; partnerType?: PartnerType; contact?: string; plan?: PlanId; since?: string; }
+export type PartnerType = 'BANK' | 'MICROFINANCE' | 'UNIVERSITY' | 'EMBASSY' | 'INSURER';
+export type PlanId = 'STARTER' | 'PROFESSIONAL' | 'ENTERPRISE';
+export interface Invoice { id: string; partnerId: string; label: string; amount: number; currency: 'CAD'; issuedAt: string; dueAt: string; status: 'PAID' | 'DUE' | 'OVERDUE'; }
 export interface Mandate { signed: boolean; signedAt?: string; hash?: string; }
 export interface Payment { amount: number; currency: 'CAD'; status: PaymentStatus; receipt?: string; }
 export interface BankVerification { accountToken: string; localBalance: number; currency: string; method: string; confirmed: boolean; }
