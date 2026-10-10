@@ -1,4 +1,4 @@
-import type { ApiResponse, PortalData, Session, UserRole, Candidate, VerificationDocument, VerificationStatus, PublicVerification } from '@/types';
+import type { BankInstitution, Invoice, PlanId, ApiResponse, PortalData, Session, UserRole, Candidate, VerificationDocument, VerificationStatus, PublicVerification } from '@/types';
 import { createMockData } from '@/mocks/data';
 export type DemoScenario = 'success' | 'empty' | 'network' | 'server';
 let scenario: DemoScenario = 'success';
@@ -45,3 +45,19 @@ export const publicVerificationApi = { lookup: (reference: string) => request<Pu
 export const notificationApi = { read: (id?: string) => request('/notifications/read', () => { data.notifications.forEach(n => { if (!id || n.id === id) n.read = true; }); return true; }, 'POST', { id }) };
 export const adminApi = { ...verificationApi };
 export const reportingApi = { export: () => request('/reports/export', () => data.cases) };
+let invoices: Invoice[] = [
+ { id: 'INV-2026-0091', partnerId: 'b1', label: 'Abonnement Professionnel · Sept. 2026', amount: 1490, currency: 'CAD', issuedAt: '2026-09-01', dueAt: '2026-09-30', status: 'PAID' },
+ { id: 'INV-2026-0118', partnerId: 'b1', label: 'Abonnement Professionnel · Oct. 2026', amount: 1490, currency: 'CAD', issuedAt: '2026-10-01', dueAt: '2026-10-31', status: 'DUE' },
+ { id: 'INV-2026-0119', partnerId: 'b1', label: 'Lettres BCL hors forfait (12 × 45)', amount: 540, currency: 'CAD', issuedAt: '2026-10-01', dueAt: '2026-10-15', status: 'OVERDUE' },
+ { id: 'INV-2026-0120', partnerId: 'b2', label: 'Abonnement Entreprise · Oct. 2026', amount: 3900, currency: 'CAD', issuedAt: '2026-10-01', dueAt: '2026-10-31', status: 'PAID' }
+];
+export const partnerApi = {
+ save: (partner: BankInstitution) => request<BankInstitution>('/partners', () => { const i = data.banks.findIndex(b => b.id === partner.id); if (i >= 0) data.banks[i] = partner; else data.banks.push(partner); return partner; }, 'POST', partner),
+ setStatus: (id: string, status: BankInstitution['status']) => request('/partners/' + id, () => { const b = data.banks.find(x => x.id === id); if (b) b.status = status; return b; }, 'PATCH', { status }),
+ remove: (id: string) => request('/partners/' + id, () => { data.banks = data.banks.filter(b => b.id !== id); return true; }, 'DELETE')
+};
+export const billingApi = {
+ list: () => request<Invoice[]>('/billing/invoices', () => invoices),
+ pay: (id: string, fail = false) => request<Invoice>('/billing/invoices/' + id + '/pay', () => { const inv = invoices.find(i => i.id === id); if (!inv) throw new ClientError('NOT_FOUND', 'Invoice not found'); if (fail) throw new ClientError('PAYMENT', 'Card declined (simulated)'); inv.status = 'PAID'; return inv; }, 'POST', { id }),
+ changePlan: (partnerId: string, plan: PlanId) => request('/billing/plan', () => { const b = data.banks.find(x => x.id === partnerId); if (b) b.plan = plan; return true; }, 'POST', { partnerId, plan })
+};
