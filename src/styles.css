@@ -74,3 +74,7 @@
 .plan-switch { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: .8rem; }
 .plan-mini { display: grid; gap: .25rem; text-align: left; padding: 1rem; border: 1px solid var(--border); border-radius: .7rem; transition: border-color .2s; } .plan-mini.active { border-color: var(--primary); border-width: 2px; } .plan-mini small { color: var(--muted-foreground); }
 @media (max-width: 760px) { .live-process { grid-template-columns: 1fr; } .pricing-amount { justify-items: start; } }
+.bill-badge { display: inline-flex; width: fit-content; padding: .15rem .55rem; border-radius: 999px; font-size: .72rem; font-weight: 600; background: var(--muted); color: var(--muted-foreground); }
+.bill-badge.paid { background: color-mix(in oklab, var(--success, #16a34a) 15%, transparent); color: var(--success, #15803d); }
+.bill-badge.due { background: color-mix(in oklab, #d97706 15%, transparent); color: #b45309; }
+.bill-badge.overdue { background: color-mix(in oklab, var(--destructive) 14%, transparent); color: var(--destructive); }
