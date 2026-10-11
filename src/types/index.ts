@@ -16,7 +16,9 @@ export interface BankInstitution { id: string; name: string; initials: string; c
 export type PartnerType = 'BANK' | 'MICROFINANCE' | 'UNIVERSITY' | 'EMBASSY' | 'INSURER';
 export type PlanId = 'STARTER' | 'PROFESSIONAL' | 'ENTERPRISE';
 export interface Invoice { id: string; partnerId: string; label: string; amount: number; currency: 'CAD'; issuedAt: string; dueAt: string; status: 'PAID' | 'DUE' | 'OVERDUE'; }
-export interface Mandate { signed: boolean; signedAt?: string; hash?: string; }
+export interface Mandate { signed: boolean; signedAt?: string; hash?: string; signature?: string; }
+export interface PersonIdentity { lastName: string; firstName: string; photo?: string; }
+export interface ApplicationForm { caseNumber: string; holder: 'SELF' | 'SPONSOR'; applicant: PersonIdentity & { dateOfBirth: string; passportNumber: string }; applicationType: string; school: string; sponsor?: PersonIdentity & { relation: string; email: string; address: string }; bankId: string; bankName: string; accountNumber: string; fundSource: string; submittedAt: string; }
 export interface Payment { amount: number; currency: 'CAD'; status: PaymentStatus; receipt?: string; }
 export interface BankVerification { accountToken: string; localBalance: number; currency: string; method: string; confirmed: boolean; }
 export interface CurrencyConversion { rate: number; cadBalance: number; date: string; }
@@ -28,4 +30,4 @@ export interface VerificationCase { id: string; reference: string; candidate: Ca
 export interface AuditLog { id: string; date: string; user: string; action: string; entity: string; ip: string; country: string; status: string; }
 export interface Notification { id: string; titleKey: string; bodyKey: string; date: string; read: boolean; channel: 'EMAIL' | 'IN_APP' | 'SMS'; status: 'SENT' | 'PENDING' | 'FAILED'; }
 export interface PublicVerification { document: RVD; extended?: Candidate; }
-export interface PortalData { candidate: Candidate; cases: VerificationCase[]; banks: BankInstitution[]; documents: VerificationDocument[]; notifications: Notification[]; audit: AuditLog[]; rvds: RVD[]; mandate: Mandate; payment: Payment; selectedBank: string; step: number; }
+export interface PortalData { candidate: Candidate; cases: VerificationCase[]; banks: BankInstitution[]; documents: VerificationDocument[]; notifications: Notification[]; audit: AuditLog[]; rvds: RVD[]; mandate: Mandate; payment: Payment; selectedBank: string; step: number; application?: ApplicationForm; }
