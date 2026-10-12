@@ -107,3 +107,4 @@
 .demo-mark { margin-top: 1rem; text-align: center; font-size: .7rem; letter-spacing: .1em; color: var(--destructive); font-weight: 700; }
 @media (max-width: 700px) { .face-capture { grid-template-columns: 1fr; } .face-capture > :not(.face-frame) { grid-column: 1; } .face-frame { grid-row: auto; width: 100%; max-width: 300px; } .mandate-doc { padding: 1.2rem; } }
 @media print { body * { visibility: hidden; } #mandate-print, #mandate-print * { visibility: visible; } #mandate-print { position: absolute; inset: 0; border: 0; } }
+.holder-option { justify-content: flex-start !important; } .holder-option input { width: auto !important; flex: none; }
