@@ -78,3 +78,33 @@
 .bill-badge.paid { background: color-mix(in oklab, var(--success, #16a34a) 15%, transparent); color: var(--success, #15803d); }
 .bill-badge.due { background: color-mix(in oklab, #d97706 15%, transparent); color: #b45309; }
 .bill-badge.overdue { background: color-mix(in oklab, var(--destructive) 14%, transparent); color: var(--destructive); }
+/* Application form & mandate */
+.application-form { display: grid; gap: 1.2rem; max-width: 980px; }
+.case-banner { display: flex; flex-wrap: wrap; gap: 2rem; padding: 1rem 1.3rem; border-radius: .8rem; background: var(--primary); color: var(--primary-foreground); }
+.case-banner div { display: grid; } .case-banner small { opacity: .8; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; } .case-banner strong { font-size: 1.15rem; font-family: ui-monospace, monospace; }
+.holder-choice { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .8rem; }
+.holder-option { display: flex; gap: .6rem; align-items: center; padding: .9rem 1rem; border: 1px solid var(--border); border-radius: .7rem; cursor: pointer; font-weight: 600; }
+.holder-option.active { border: 2px solid var(--primary); background: color-mix(in oklab, var(--primary) 6%, transparent); }
+.holder-option input { accent-color: var(--primary); }
+.sub-heading { font-weight: 700; margin: 1.4rem 0 .8rem; }
+.face-capture { display: grid; grid-template-columns: 260px 1fr; gap: 1rem 1.5rem; align-items: start; }
+.face-capture > :not(.face-frame) { grid-column: 2; }
+.face-frame { grid-row: span 4; position: relative; width: 260px; aspect-ratio: 3/4; border-radius: .9rem; overflow: hidden; background: var(--muted); border: 1px solid var(--border); }
+.face-frame video, .face-frame img { width: 100%; height: 100%; object-fit: cover; } .face-frame video { transform: scaleX(-1); }
+.face-guide { position: absolute; inset: 12% 18% 18%; border: 3px dashed color-mix(in oklab, var(--primary) 80%, transparent); border-radius: 50%; pointer-events: none; }
+.face-placeholder { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: .4rem; color: var(--muted-foreground); font-size: .8rem; }
+.face-ok { position: absolute; bottom: .6rem; left: .6rem; display: flex; gap: .3rem; align-items: center; padding: .2rem .6rem; border-radius: 999px; font-size: .72rem; font-weight: 600; background: var(--background); color: var(--primary); }
+.face-tips { list-style: disc; padding-left: 1.1rem; font-size: .85rem; color: var(--muted-foreground); display: grid; gap: .2rem; }
+.form-actions.start { justify-content: flex-start; flex-wrap: wrap; }
+.mandate-wrap { max-width: 860px; display: grid; gap: 1rem; } .mandate-toolbar { display: flex; justify-content: flex-end; }
+.mandate-doc { background: var(--card); border: 1px solid var(--border); border-top: 5px solid var(--primary); border-radius: .6rem; padding: 2rem 2.2rem; font-size: .9rem; line-height: 1.6; display: grid; gap: .4rem; }
+.mandate-doc header { display: flex; gap: 1.2rem; align-items: center; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: .6rem; }
+.mandate-doc h2 { font-size: 1rem; font-weight: 800; margin-top: .3rem; } .mandate-doc h3 { font-weight: 700; margin-top: .8rem; color: var(--primary); }
+.mandate-doc .en { color: var(--muted-foreground); font-style: italic; }
+.mandate-meta { display: flex; justify-content: space-between; flex-wrap: wrap; font-size: .82rem; color: var(--muted-foreground); }
+.signature-input { font-family: 'Brush Script MT', 'Segoe Script', cursive; font-size: 1.5rem !important; }
+.signature-block { margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--border); display: grid; } .signature-script { font-family: 'Brush Script MT', 'Segoe Script', cursive; font-size: 1.8rem; color: var(--primary); }
+.demo-mark { margin-top: 1rem; text-align: center; font-size: .7rem; letter-spacing: .1em; color: var(--destructive); font-weight: 700; }
+@media (max-width: 700px) { .face-capture { grid-template-columns: 1fr; } .face-capture > :not(.face-frame) { grid-column: 1; } .face-frame { grid-row: auto; width: 100%; max-width: 300px; } .mandate-doc { padding: 1.2rem; } }
+@media print { body * { visibility: hidden; } #mandate-print, #mandate-print * { visibility: visible; } #mandate-print { position: absolute; inset: 0; border: 0; } }
+.holder-option { justify-content: flex-start !important; } .holder-option input { width: auto !important; flex: none; }
