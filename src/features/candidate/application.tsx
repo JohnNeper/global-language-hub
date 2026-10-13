@@ -16,7 +16,7 @@ const relations = ['Père / Father', 'Mère / Mother', 'Oncle / Uncle', 'Tante /
 const fundSources = ['Salaires & Épargne / Salary & Savings', 'Revenus commerciaux / Business income', 'Donation familiale / Family gift', 'Vente de bien / Sale of property', 'Héritage / Inheritance', 'Autre / Other'];
 
 /* ---------- Face photo capture ---------- */
-export function FaceCapture({ label, value, onChange }: { label: string; value?: string; onChange: (v?: string) => void }) {
+export function FaceCapture({ label, value, onChange }: { label: string; value?: string | undefined; onChange: (v?: string) => void }) {
   const { locale } = useLocale(); const T = tr(locale); const video = useRef<HTMLVideoElement>(null); const stream = useRef<MediaStream | null>(null); const [live, setLive] = useState(false); const [error, setError] = useState(false); const fileRef = useRef<HTMLInputElement>(null);
   const stop = () => { stream.current?.getTracks().forEach(t => t.stop()); stream.current = null; setLive(false); };
   useEffect(() => stop, []);
