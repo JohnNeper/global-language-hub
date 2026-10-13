@@ -17,8 +17,8 @@ export type PartnerType = 'BANK' | 'MICROFINANCE' | 'UNIVERSITY' | 'EMBASSY' | '
 export type PlanId = 'STARTER' | 'PROFESSIONAL' | 'ENTERPRISE';
 export interface Invoice { id: string; partnerId: string; label: string; amount: number; currency: 'CAD'; issuedAt: string; dueAt: string; status: 'PAID' | 'DUE' | 'OVERDUE'; }
 export interface Mandate { signed: boolean; signedAt?: string; hash?: string; signature?: string; }
-export interface PersonIdentity { lastName: string; firstName: string; photo?: string; }
-export interface ApplicationForm { caseNumber: string; holder: 'SELF' | 'SPONSOR'; applicant: PersonIdentity & { dateOfBirth: string; passportNumber: string }; applicationType: string; school: string; sponsor?: PersonIdentity & { relation: string; email: string; address: string }; bankId: string; bankName: string; accountNumber: string; fundSource: string; submittedAt: string; }
+export interface PersonIdentity { lastName: string; firstName: string; photo?: string | undefined; }
+export interface ApplicationForm { caseNumber: string; holder: 'SELF' | 'SPONSOR'; applicant: PersonIdentity & { dateOfBirth: string; passportNumber: string }; applicationType: string; school: string; sponsor?: undefined | PersonIdentity & { relation: string; email: string; address: string }; bankId: string; bankName: string; accountNumber: string; fundSource: string; submittedAt: string; }
 export interface Payment { amount: number; currency: 'CAD'; status: PaymentStatus; receipt?: string; }
 export interface BankVerification { accountToken: string; localBalance: number; currency: string; method: string; confirmed: boolean; }
 export interface CurrencyConversion { rate: number; cadBalance: number; date: string; }
