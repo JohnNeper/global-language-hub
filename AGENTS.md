@@ -15,3 +15,5 @@
 
 - Parent verification routes render Outlet with content in index leaves; this keeps case detail navigation functional.
 - Generate demo PDFs lazily in the browser and mark them unofficial; this avoids server dependencies and misleading document validity.
+
+- Simulated security (two-step sign-in, lockout, inactivity timeout, policies) lives in src/lib/security.ts plus the portal context; pure rules stay testable and swap for a real identity provider later.
