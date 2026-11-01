@@ -1,8 +1,11 @@
-# CanVerify frontend
+# GFASC frontend
 - [x] Bilingual design system and shared portal navigation
 - [x] Typed mock/REST API adapters and simulated role access
 - [x] Public pages and protected-detail RVD lookup
-- [x] Candidate registration, document, mandate, bank, payment and RVD journey
-- [x] Bank cases, decisions, letters, analytics and exports
-- [x] Administration, risk, RVD, audit and management pages
-- [x] Verify key workflows, language switching and layouts
+- [x] Candidate application form, photo, mandate signature, payment and RVD journey
+- [x] Bank cases, decisions, letters, analytics, exports and billing
+- [x] Administration, partners, risk, RVD, audit, billing and management pages
+- [ ] Rename platform to GFASC and apply the new shield logo
+- [ ] Institutional design refresh (palette, typography, header, home, offers)
+- [ ] Security per portal: two-step sign-in, lockout, inactivity timeout, security centre, admin policies and role matrix
+- [ ] Verify sign-in, timeout and security pages in the browser

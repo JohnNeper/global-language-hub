@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { authApi, portalApi, mandateApi, paymentApi, bankApi, verificationApi, publicVerificationApi, setDemoScenario } from '@/api/client';
-describe('CanVerify mock frontend workflow',()=> {
+describe('GFASC mock frontend workflow',()=> {
  it('supports the non-biometric journey, payment recovery and correct public document',async()=>{
   setDemoScenario('success');
   await authApi.register({firstName:'Demo',lastName:'Test'});
