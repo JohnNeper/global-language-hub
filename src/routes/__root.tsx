@@ -81,10 +81,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "GFASC — GFASC Canada" },
+      { title: "GFASC Canada — Vérification financière sécurisée" },
       { name: "description", content: "GFASC · Portail de vérification financière" },
       { name: "author", content: "GFASC Canada Inc." },
-      { property: "og:title", content: "GFASC — GFASC Canada" },
+      { property: "og:title", content: "GFASC Canada — Vérification financière sécurisée" },
       { property: "og:description", content: "GFASC · Portail de vérification financière" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

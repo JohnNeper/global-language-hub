@@ -2,5 +2,5 @@ import { createFileRoute } from '@tanstack/react-router';
 import { BankSelectionPage } from '@/features/candidate/pages';
 import { pageHead } from '@/lib/head';
 import { PortalLayout } from '@/layouts/portal';
-export const Route = createFileRoute('/candidate/verification/bank')({ head: () => pageHead('Candidat · verification · bank', 'GFASC — Candidat · verification · bank · GFASC Canada. Interface de démonstration de vérification financière.'), component: Page });
+export const Route = createFileRoute('/candidate/verification/bank')({ head: () => pageHead('Candidat · Choix de la banque', 'Candidat · verification · bank — GFASC, Global Financial Authentication Services Canada : plateforme sécurisée de vérification financière.'), component: Page });
 function Page() { return <PortalLayout kind="candidate"><BankSelectionPage /></PortalLayout>; }
