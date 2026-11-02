@@ -28,6 +28,7 @@ import { Route as AdminNotificationsRouteImport } from './routes/admin.notificat
 import { Route as AdminPartnersRouteImport } from './routes/admin.partners'
 import { Route as AdminReportsRouteImport } from './routes/admin.reports'
 import { Route as AdminRvdRouteImport } from './routes/admin.rvd'
+import { Route as AdminSecurityRouteImport } from './routes/admin.security'
 import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
 import { Route as AdminUsersRouteImport } from './routes/admin.users'
 import { Route as AdminVerificationsRouteImport } from './routes/admin.verifications'
@@ -41,6 +42,7 @@ import { Route as BankLettersRouteImport } from './routes/bank.letters'
 import { Route as BankLoginRouteImport } from './routes/bank.login'
 import { Route as BankPendingRouteImport } from './routes/bank.pending'
 import { Route as BankRejectedRouteImport } from './routes/bank.rejected'
+import { Route as BankSecurityRouteImport } from './routes/bank.security'
 import { Route as BankSettingsRouteImport } from './routes/bank.settings'
 import { Route as BankVerificationsRouteImport } from './routes/bank.verifications'
 import { Route as CandidateDashboardRouteImport } from './routes/candidate.dashboard'
@@ -50,6 +52,7 @@ import { Route as CandidateNotificationsRouteImport } from './routes/candidate.n
 import { Route as CandidateOnboardingRouteImport } from './routes/candidate.onboarding'
 import { Route as CandidateProfileRouteImport } from './routes/candidate.profile'
 import { Route as CandidateRegisterRouteImport } from './routes/candidate.register'
+import { Route as CandidateSecurityRouteImport } from './routes/candidate.security'
 import { Route as CandidateSettingsRouteImport } from './routes/candidate.settings'
 import { Route as CandidateVerifyEmailRouteImport } from './routes/candidate.verify-email'
 import { Route as LegalDisclaimerRouteImport } from './routes/legal.disclaimer'
@@ -163,6 +166,11 @@ const AdminRvdRoute = AdminRvdRouteImport.update({
   path: '/admin/rvd',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminSecurityRoute = AdminSecurityRouteImport.update({
+  id: '/admin/security',
+  path: '/admin/security',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminSettingsRoute = AdminSettingsRouteImport.update({
   id: '/admin/settings',
   path: '/admin/settings',
@@ -228,6 +236,11 @@ const BankRejectedRoute = BankRejectedRouteImport.update({
   path: '/bank/rejected',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BankSecurityRoute = BankSecurityRouteImport.update({
+  id: '/bank/security',
+  path: '/bank/security',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BankSettingsRoute = BankSettingsRouteImport.update({
   id: '/bank/settings',
   path: '/bank/settings',
@@ -271,6 +284,11 @@ const CandidateProfileRoute = CandidateProfileRouteImport.update({
 const CandidateRegisterRoute = CandidateRegisterRouteImport.update({
   id: '/candidate/register',
   path: '/candidate/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CandidateSecurityRoute = CandidateSecurityRouteImport.update({
+  id: '/candidate/security',
+  path: '/candidate/security',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CandidateSettingsRoute = CandidateSettingsRouteImport.update({
@@ -386,6 +404,7 @@ export interface FileRoutesByFullPath {
   '/admin/partners': typeof AdminPartnersRoute
   '/admin/reports': typeof AdminReportsRoute
   '/admin/rvd': typeof AdminRvdRoute
+  '/admin/security': typeof AdminSecurityRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/users': typeof AdminUsersRoute
   '/admin/verifications': typeof AdminVerificationsRouteWithChildren
@@ -399,6 +418,7 @@ export interface FileRoutesByFullPath {
   '/bank/login': typeof BankLoginRoute
   '/bank/pending': typeof BankPendingRoute
   '/bank/rejected': typeof BankRejectedRoute
+  '/bank/security': typeof BankSecurityRoute
   '/bank/settings': typeof BankSettingsRoute
   '/bank/verifications': typeof BankVerificationsRouteWithChildren
   '/candidate/dashboard': typeof CandidateDashboardRoute
@@ -408,6 +428,7 @@ export interface FileRoutesByFullPath {
   '/candidate/onboarding': typeof CandidateOnboardingRoute
   '/candidate/profile': typeof CandidateProfileRoute
   '/candidate/register': typeof CandidateRegisterRoute
+  '/candidate/security': typeof CandidateSecurityRoute
   '/candidate/settings': typeof CandidateSettingsRoute
   '/candidate/verify-email': typeof CandidateVerifyEmailRoute
   '/legal/disclaimer': typeof LegalDisclaimerRoute
@@ -446,6 +467,7 @@ export interface FileRoutesByTo {
   '/admin/partners': typeof AdminPartnersRoute
   '/admin/reports': typeof AdminReportsRoute
   '/admin/rvd': typeof AdminRvdRoute
+  '/admin/security': typeof AdminSecurityRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/users': typeof AdminUsersRoute
   '/bank/analytics': typeof BankAnalyticsRoute
@@ -458,6 +480,7 @@ export interface FileRoutesByTo {
   '/bank/login': typeof BankLoginRoute
   '/bank/pending': typeof BankPendingRoute
   '/bank/rejected': typeof BankRejectedRoute
+  '/bank/security': typeof BankSecurityRoute
   '/bank/settings': typeof BankSettingsRoute
   '/candidate/dashboard': typeof CandidateDashboardRoute
   '/candidate/documents': typeof CandidateDocumentsRoute
@@ -466,6 +489,7 @@ export interface FileRoutesByTo {
   '/candidate/onboarding': typeof CandidateOnboardingRoute
   '/candidate/profile': typeof CandidateProfileRoute
   '/candidate/register': typeof CandidateRegisterRoute
+  '/candidate/security': typeof CandidateSecurityRoute
   '/candidate/settings': typeof CandidateSettingsRoute
   '/candidate/verify-email': typeof CandidateVerifyEmailRoute
   '/legal/disclaimer': typeof LegalDisclaimerRoute
@@ -505,6 +529,7 @@ export interface FileRoutesById {
   '/admin/partners': typeof AdminPartnersRoute
   '/admin/reports': typeof AdminReportsRoute
   '/admin/rvd': typeof AdminRvdRoute
+  '/admin/security': typeof AdminSecurityRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/users': typeof AdminUsersRoute
   '/admin/verifications': typeof AdminVerificationsRouteWithChildren
@@ -518,6 +543,7 @@ export interface FileRoutesById {
   '/bank/login': typeof BankLoginRoute
   '/bank/pending': typeof BankPendingRoute
   '/bank/rejected': typeof BankRejectedRoute
+  '/bank/security': typeof BankSecurityRoute
   '/bank/settings': typeof BankSettingsRoute
   '/bank/verifications': typeof BankVerificationsRouteWithChildren
   '/candidate/dashboard': typeof CandidateDashboardRoute
@@ -527,6 +553,7 @@ export interface FileRoutesById {
   '/candidate/onboarding': typeof CandidateOnboardingRoute
   '/candidate/profile': typeof CandidateProfileRoute
   '/candidate/register': typeof CandidateRegisterRoute
+  '/candidate/security': typeof CandidateSecurityRoute
   '/candidate/settings': typeof CandidateSettingsRoute
   '/candidate/verify-email': typeof CandidateVerifyEmailRoute
   '/legal/disclaimer': typeof LegalDisclaimerRoute
@@ -567,6 +594,7 @@ export interface FileRouteTypes {
     | '/admin/partners'
     | '/admin/reports'
     | '/admin/rvd'
+    | '/admin/security'
     | '/admin/settings'
     | '/admin/users'
     | '/admin/verifications'
@@ -580,6 +608,7 @@ export interface FileRouteTypes {
     | '/bank/login'
     | '/bank/pending'
     | '/bank/rejected'
+    | '/bank/security'
     | '/bank/settings'
     | '/bank/verifications'
     | '/candidate/dashboard'
@@ -589,6 +618,7 @@ export interface FileRouteTypes {
     | '/candidate/onboarding'
     | '/candidate/profile'
     | '/candidate/register'
+    | '/candidate/security'
     | '/candidate/settings'
     | '/candidate/verify-email'
     | '/legal/disclaimer'
@@ -627,6 +657,7 @@ export interface FileRouteTypes {
     | '/admin/partners'
     | '/admin/reports'
     | '/admin/rvd'
+    | '/admin/security'
     | '/admin/settings'
     | '/admin/users'
     | '/bank/analytics'
@@ -639,6 +670,7 @@ export interface FileRouteTypes {
     | '/bank/login'
     | '/bank/pending'
     | '/bank/rejected'
+    | '/bank/security'
     | '/bank/settings'
     | '/candidate/dashboard'
     | '/candidate/documents'
@@ -647,6 +679,7 @@ export interface FileRouteTypes {
     | '/candidate/onboarding'
     | '/candidate/profile'
     | '/candidate/register'
+    | '/candidate/security'
     | '/candidate/settings'
     | '/candidate/verify-email'
     | '/legal/disclaimer'
@@ -685,6 +718,7 @@ export interface FileRouteTypes {
     | '/admin/partners'
     | '/admin/reports'
     | '/admin/rvd'
+    | '/admin/security'
     | '/admin/settings'
     | '/admin/users'
     | '/admin/verifications'
@@ -698,6 +732,7 @@ export interface FileRouteTypes {
     | '/bank/login'
     | '/bank/pending'
     | '/bank/rejected'
+    | '/bank/security'
     | '/bank/settings'
     | '/bank/verifications'
     | '/candidate/dashboard'
@@ -707,6 +742,7 @@ export interface FileRouteTypes {
     | '/candidate/onboarding'
     | '/candidate/profile'
     | '/candidate/register'
+    | '/candidate/security'
     | '/candidate/settings'
     | '/candidate/verify-email'
     | '/legal/disclaimer'
@@ -746,6 +782,7 @@ export interface RootRouteChildren {
   AdminPartnersRoute: typeof AdminPartnersRoute
   AdminReportsRoute: typeof AdminReportsRoute
   AdminRvdRoute: typeof AdminRvdRoute
+  AdminSecurityRoute: typeof AdminSecurityRoute
   AdminSettingsRoute: typeof AdminSettingsRoute
   AdminUsersRoute: typeof AdminUsersRoute
   AdminVerificationsRoute: typeof AdminVerificationsRouteWithChildren
@@ -759,6 +796,7 @@ export interface RootRouteChildren {
   BankLoginRoute: typeof BankLoginRoute
   BankPendingRoute: typeof BankPendingRoute
   BankRejectedRoute: typeof BankRejectedRoute
+  BankSecurityRoute: typeof BankSecurityRoute
   BankSettingsRoute: typeof BankSettingsRoute
   BankVerificationsRoute: typeof BankVerificationsRouteWithChildren
   CandidateDashboardRoute: typeof CandidateDashboardRoute
@@ -768,6 +806,7 @@ export interface RootRouteChildren {
   CandidateOnboardingRoute: typeof CandidateOnboardingRoute
   CandidateProfileRoute: typeof CandidateProfileRoute
   CandidateRegisterRoute: typeof CandidateRegisterRoute
+  CandidateSecurityRoute: typeof CandidateSecurityRoute
   CandidateSettingsRoute: typeof CandidateSettingsRoute
   CandidateVerifyEmailRoute: typeof CandidateVerifyEmailRoute
   LegalDisclaimerRoute: typeof LegalDisclaimerRoute
@@ -918,6 +957,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminRvdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/security': {
+      id: '/admin/security'
+      path: '/admin/security'
+      fullPath: '/admin/security'
+      preLoaderRoute: typeof AdminSecurityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/settings': {
       id: '/admin/settings'
       path: '/admin/settings'
@@ -1009,6 +1055,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BankRejectedRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bank/security': {
+      id: '/bank/security'
+      path: '/bank/security'
+      fullPath: '/bank/security'
+      preLoaderRoute: typeof BankSecurityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/bank/settings': {
       id: '/bank/settings'
       path: '/bank/settings'
@@ -1070,6 +1123,13 @@ declare module '@tanstack/react-router' {
       path: '/candidate/register'
       fullPath: '/candidate/register'
       preLoaderRoute: typeof CandidateRegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candidate/security': {
+      id: '/candidate/security'
+      path: '/candidate/security'
+      fullPath: '/candidate/security'
+      preLoaderRoute: typeof CandidateSecurityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/candidate/settings': {
@@ -1240,6 +1300,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminPartnersRoute: AdminPartnersRoute,
   AdminReportsRoute: AdminReportsRoute,
   AdminRvdRoute: AdminRvdRoute,
+  AdminSecurityRoute: AdminSecurityRoute,
   AdminSettingsRoute: AdminSettingsRoute,
   AdminUsersRoute: AdminUsersRoute,
   AdminVerificationsRoute: AdminVerificationsRouteWithChildren,
@@ -1253,6 +1314,7 @@ const rootRouteChildren: RootRouteChildren = {
   BankLoginRoute: BankLoginRoute,
   BankPendingRoute: BankPendingRoute,
   BankRejectedRoute: BankRejectedRoute,
+  BankSecurityRoute: BankSecurityRoute,
   BankSettingsRoute: BankSettingsRoute,
   BankVerificationsRoute: BankVerificationsRouteWithChildren,
   CandidateDashboardRoute: CandidateDashboardRoute,
@@ -1262,6 +1324,7 @@ const rootRouteChildren: RootRouteChildren = {
   CandidateOnboardingRoute: CandidateOnboardingRoute,
   CandidateProfileRoute: CandidateProfileRoute,
   CandidateRegisterRoute: CandidateRegisterRoute,
+  CandidateSecurityRoute: CandidateSecurityRoute,
   CandidateSettingsRoute: CandidateSettingsRoute,
   CandidateVerifyEmailRoute: CandidateVerifyEmailRoute,
   LegalDisclaimerRoute: LegalDisclaimerRoute,
