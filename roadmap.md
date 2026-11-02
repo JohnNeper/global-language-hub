@@ -5,7 +5,7 @@
 - [x] Candidate application form, photo, mandate signature, payment and RVD journey
 - [x] Bank cases, decisions, letters, analytics, exports and billing
 - [x] Administration, partners, risk, RVD, audit, billing and management pages
-- [ ] Rename platform to GFASC and apply the new shield logo
-- [ ] Institutional design refresh (palette, typography, header, home, offers)
-- [ ] Security per portal: two-step sign-in, lockout, inactivity timeout, security centre, admin policies and role matrix
-- [ ] Verify sign-in, timeout and security pages in the browser
+- [x] Rename platform to GFASC and apply the new shield logo
+- [x] Institutional design refresh (palette, typography, header, home, offers)
+- [x] Security per portal: two-step sign-in, lockout, inactivity timeout, security centre, admin policies and role matrix
+- [x] Verify sign-in, timeout and security pages in the browser
